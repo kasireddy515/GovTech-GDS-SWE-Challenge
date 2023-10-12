@@ -4,10 +4,14 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { CreateSessionComponent } from './create-session/create-session.component';
+import { ViewSessionComponent } from './view-session/view-session.component';
+import { EditSessionComponent } from './edit-session/edit-session.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'create-session', component: CreateSessionComponent },
+  { path: 'view-session/:id', component: ViewSessionComponent },
+  { path: 'edit-session/:id', component: EditSessionComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent }
 ];

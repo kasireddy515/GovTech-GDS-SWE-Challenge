@@ -29,6 +29,7 @@ export class CreateSessionComponent implements OnInit {
   sortOrder:string='desc';
   isDataLoading:boolean=false;
   selectedUsers:any[]=[];
+  createdSessionId:any;
 
   constructor(private sessionService:SessionService,private router: Router,private fb: FormBuilder,private userService:UserService) {
     this.getUsers();
@@ -101,7 +102,7 @@ export class CreateSessionComponent implements OnInit {
     if(!selectedUser.selected){
       this.selectedUsers.push(selectedUser.id);
     }else{
-      this.selectedUsers = this.selectedUsers.filter(selectedUser => selectedUser !== selectedUser.id);
+      this.selectedUsers = this.selectedUsers.filter(u => u!= selectedUser.id);
     }
     selectedUser.selected=!selectedUser.selected;
   }
@@ -111,13 +112,22 @@ export class CreateSessionComponent implements OnInit {
   }
 
   createSession(){
+    this.createdSessionId=null;
     this.createSessionErrors =[];
     this.isDataLoading = true;
     let request = this.createSessionForm.value;
+    request.userIds=this.selectedUsers;
     this.sessionService.create(request).subscribe(
       (data) => {
         this.isDataLoading = false;
-        alert("Session has been created successfully");
+        this.createdSessionId=data.id;
+        this.selectedUsers=[];
+        this.createSessionForm.reset();
+        if(this.dataSource.data && this.dataSource.data.length>0){
+          this.dataSource.data.forEach(e => {
+            e.selected=false;
+          });
+        }
       },
       (error) => {
         this.isDataLoading = false;
@@ -134,5 +144,12 @@ export class CreateSessionComponent implements OnInit {
       this.pageOffset=0;
       this.getUsers();
     }
+  }
+
+  viewSession(){
+    this.router.navigate([
+      'view-session',
+      this.createdSessionId
+    ]);
   }
 }

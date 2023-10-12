@@ -188,4 +188,10 @@ public class SessionServiceImpl implements SessionService {
 		session.setSubmittedRestaurants(submittedRestaurants);
 		repository.save(session);
 	}
+
+	@Override
+	public void selectSessionSuggestRestaurant(Restaurant randomRestaurant, Session session) {
+		session.setSelectedRestaurant(randomRestaurant);
+		repository.save(session);
+	}
 }

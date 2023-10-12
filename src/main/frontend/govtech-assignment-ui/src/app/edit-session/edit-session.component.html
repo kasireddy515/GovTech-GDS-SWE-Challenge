@@ -2,10 +2,11 @@
     <div class="header-container">
         <div>
             <span>
-                Create a new session
+                Edit session
             </span>
             <span class="go-to-sessions-btn">
                 <button class="view-btn" mat-raised-button color="primary" (click)="goToSessions()" >View all sessions</button>
+                <button class="view-btn" mat-raised-button color="primary" (click)="viewSession()" >View session</button>
             </span>
         </div>
         <div class="sub-header-container">
@@ -15,21 +16,21 @@
         </div>
     </div>
 </div>
-<div class="data-container">
+<div class="data-container" *ngIf="updateSessionForm">
     <div class="session-info-container">
         <div class="data-header-container">
             <span>
                 Session information
             </span>
         </div>
-        <form id="loginForm" [formGroup]="createSessionForm" autocomplete="off" class="sign-in-form">
+        <form id="loginForm" [formGroup]="updateSessionForm" autocomplete="off" class="sign-in-form">
             <div class="sign-in-form-content">
                 <div>
                     <mat-form-field class="example-full-width">
                         <input matInput type="text" autocomplete="disabled" formControlName="title" placeholder="Enter Session Title"/>
                     </mat-form-field>
-                    <div *ngIf="createSessionForm.get('title')?.touched">
-                    <span class="error" *ngIf="createSessionFormError('title', 'required')">Session Title is required</span>
+                    <div *ngIf="updateSessionForm.get('title')?.touched">
+                    <span class="error" *ngIf="updateSessionFormError('title', 'required')">Session Title is required</span>
                     </div>
                 </div>
 
@@ -37,14 +38,14 @@
                     <mat-form-field class="example-full-width">
                         <textarea rows="8" matInput type="text" autocomplete="disabled" formControlName="description" placeholder="Enter Session Description"></textarea>
                     </mat-form-field>
-                    <div *ngIf="createSessionForm.get('description')?.touched">
-                    <span class="error" *ngIf="createSessionFormError('description', 'required')">Session Description is required</span>
+                    <div *ngIf="updateSessionForm.get('description')?.touched">
+                    <span class="error" *ngIf="updateSessionFormError('description', 'required')">Session Description is required</span>
                     </div>
                 </div>
                 
                 <div class="errors">
-                    <ul *ngIf="createSessionErrors && createSessionErrors.length>0">
-                        <li class="error" *ngFor="let signInError of createSessionErrors;">
+                    <ul *ngIf="updateSessionErrors && updateSessionErrors.length>0">
+                        <li class="error" *ngFor="let signInError of updateSessionErrors;">
                             {{signInError.message}}
                         </li>
                     </ul>
@@ -52,11 +53,11 @@
              </div>
         </form>
         <div class="login-btn">
-            <button mat-raised-button [disabled]="!this.createSessionForm.valid" color="primary" (click)="createSession()">Create Session</button>
+            <button mat-raised-button [disabled]="!this.updateSessionForm.valid" color="primary" (click)="updateSession()">Update Session</button>
         </div>
-        <div class="session-success" *ngIf="createdSessionId">
+        <div class="session-success" *ngIf="updatedSessionId">
             <div>
-                Session has been created successfully. Cick <a (click)="viewSession()">here</a> to view more details
+                Session has been updated successfully. Cick <a (click)="viewSession()">here</a> to view more details
             </div>
         </div>
     </div>

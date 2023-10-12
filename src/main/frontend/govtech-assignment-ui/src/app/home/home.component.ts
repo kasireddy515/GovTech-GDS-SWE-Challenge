@@ -84,12 +84,17 @@ export class HomeComponent implements OnInit {
   }
 
   joinSession(selectedSession:any){
-  }
-
-  endSession(selectedSession:any){
+    this.router.navigate([
+      'view-session',
+      selectedSession.id
+    ]);
   }
 
   viewSession(selectedSession:any){
+    this.router.navigate([
+      'view-session',
+      selectedSession.id
+    ]);
   }
 
   search(){
@@ -106,9 +111,46 @@ export class HomeComponent implements OnInit {
   }
 
   editSession(selectedSession:any){
+    this.router.navigate([
+      'edit-session',
+      selectedSession.id
+    ]);
+  }
+
+  deleteSessionConfirm(selectedSession:any){
+    if(confirm("Are you sure to delete the session : "+selectedSession.title)) {
+      this.deleteSession(selectedSession);
+    }
   }
 
   deleteSession(selectedSession:any){
+    this.sessionService.delete(selectedSession.id).subscribe(data => {
+      alert("Session has been deleted successfully : "+selectedSession.title);
+      this.getSessions();
+    },error => {
+    },
+    () => {
+    });
   }
+
+  endSessionConfirm(selectedSession:any){
+    if(confirm("Are you sure to end the session : "+selectedSession.title)) {
+      this.endSession(selectedSession);
+    }
+  }
+
   
+  endSession(selectedSession:any){
+    let request = {
+      active:false
+    };
+    this.sessionService.update(selectedSession.id,request).subscribe(data => {
+      alert("Session has been closed successfully : "+selectedSession.title);
+      this.getSessions();
+    },error => {
+    },
+    () => {
+    });
+  }
+
 }

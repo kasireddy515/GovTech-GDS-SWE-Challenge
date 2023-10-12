@@ -21,5 +21,6 @@ public class SessionResponse implements Serializable {
 	private Boolean active;
 	private Date createdOn;
 	private Date updatedOn;
+	private RestaurantResponse selectedRestaurant;
 
 }

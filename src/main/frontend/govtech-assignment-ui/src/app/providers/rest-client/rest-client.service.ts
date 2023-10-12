@@ -24,4 +24,7 @@ export class RestClientService {
     return this.http.put<any>(this.baseUrl + serviceURL, request);
   }
   
+  public delete(serviceURL: any) {
+    return this.http.delete<any>(this.baseUrl + serviceURL);
+  }
 }

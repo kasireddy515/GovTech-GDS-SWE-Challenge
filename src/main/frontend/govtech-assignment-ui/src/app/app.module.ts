@@ -28,6 +28,8 @@ import { HomeComponent } from './home/home.component';
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AUTH_INTERCEPTOR_PROVIDERS } from './providers/auth-interceptor/auth-interceptor.service';
+import { ViewSessionComponent } from './view-session/view-session.component';
+import { EditSessionComponent } from './edit-session/edit-session.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AUTH_INTERCEPTOR_PROVIDERS } from './providers/auth-interceptor/auth-in
     SignInComponent,
     SignUpComponent,
     HomeComponent,
-    CreateSessionComponent
+    CreateSessionComponent,
+    ViewSessionComponent,
+    EditSessionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

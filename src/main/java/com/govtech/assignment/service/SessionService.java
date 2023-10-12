@@ -34,4 +34,6 @@ public interface SessionService {
 
 	void suggestRestaurantToSession(Restaurant restaurant, Session session);
 
+	void selectSessionSuggestRestaurant(Restaurant randomRestaurant, Session session);
+
 }

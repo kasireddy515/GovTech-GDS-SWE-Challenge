@@ -1,0 +1,100 @@
+<div class="create-session-container" *ngIf="sessionData && userDetails">
+    <div class="header-container">
+        <div>
+            <span>
+                {{sessionData.title}}
+            </span>
+            <span class="go-to-sessions-btn">
+                <button class="view-btn" *ngIf="sessionData.createdBy.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm()">End Session</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Edit Session</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="deleteSessionConfirm()" >Delete Session</button>
+                <button class="view-btn" mat-raised-button color="primary" (click)="goToSessions()" >View all sessions</button>
+                
+            </span>
+        </div>
+        <div class="sub-header-container">
+            <span class="note-text">
+                {{sessionData.description}}
+            </span>
+        </div>
+    </div>
+</div>
+<div class="data-container" *ngIf="sessionData">
+    <div class="session-info-container">
+        <div class="data-header-container">
+            <span>
+               Session information
+            </span>
+        </div>
+        <div class="data-content-container">
+            <div class="session-data">
+                <div>
+                    <span>Name</span> : {{sessionData.title}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Description</span> : {{sessionData.title}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Created by</span>: {{sessionData.createdBy.firstName}}&nbsp;{{sessionData.createdBy.lastName}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Status</span> : {{sessionData.active?'Active':'Closed'}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Created on</span> : {{sessionData.createdOn}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Last update on</span> : {{sessionData.updatedOn}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>No of users invited</span> : {{sessionData.usersInvited.length}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>No of responses recevied</span> : {{sessionData.submittedRestaurants.length}}
+                </div>
+            </div>
+            <div class="session-data">
+                <div>
+                    <span>Selected restaurant</span> : {{sessionData.selectedRestaurant?sessionData.selectedRestaurant.title:""}},{{sessionData.selectedRestaurant?sessionData.selectedRestaurant.location:""}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="session-responses-container">
+        <div class="data-header-container">
+            <span>
+               Users responses ({{sessionData.submittedRestaurants.length}})
+            </span>
+        </div>
+    </div>
+    <div class="users-container">
+        <div class="data-header-container">
+            <span>
+                Invited users ({{sessionData.usersInvited.length}})
+            </span>
+            &nbsp;&nbsp;
+            <span>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Invite another user</button>
+            </span>
+        </div>
+        <div class="data-content-container">
+            <div *ngFor="let userInvited of sessionData.usersInvited;" class="invited-user">
+                {{userInvited.firstName}}&nbsp;{{userInvited.lastName}}
+            </div>
+        </div>
+    </div>
+</div>

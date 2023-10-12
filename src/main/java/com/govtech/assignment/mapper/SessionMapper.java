@@ -93,6 +93,10 @@ public interface SessionMapper {
 		if (session.getSubmittedRestaurants() != null && !session.getSubmittedRestaurants().isEmpty()) {
 			sessionResponse.setSubmittedRestaurants(RESTAURANT_MAPPER.modelsToDtos(session.getSubmittedRestaurants()));
 		}
+
+		if (session.getSelectedRestaurant() != null) {
+			sessionResponse.setSelectedRestaurant(RESTAURANT_MAPPER.modelToDto(session.getSelectedRestaurant()));
+		}
 	}
 
 	@Mapping(source = "id", target = "id")

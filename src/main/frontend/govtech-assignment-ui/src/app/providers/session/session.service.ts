@@ -21,4 +21,20 @@ export class SessionService {
     return this.restClientService.get(this.baseUrl+"/"+pageOffset+"/"+pageLimit+"/"+searchText+"/"+sortBy+"/"+sortOrder);
   }
   
+  getById(id:string) {
+    return this.restClientService.get(this.baseUrl+"/"+id);
+  }
+
+  delete(id:string) {
+    return this.restClientService.delete(this.baseUrl+"/"+id);
+  }
+
+  update(id:string,updateSessionRequest:any){
+    return this.restClientService.put(updateSessionRequest,this.baseUrl+"/"+id);
+  }
+
+  inviteUsers(id:string,inviteUsersRequest:any){
+    return this.restClientService.post(inviteUsersRequest,this.baseUrl+"/invite-users/"+id);
+  }
+
 }

@@ -72,6 +72,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 					.skip(new Random().nextInt(submittedRestaurants.size())).findFirst().orElse(null);
 
 			if (randomRestaurant != null) {
+				sessionService.selectSessionSuggestRestaurant(randomRestaurant, session);
 				restaurantResponse = mapper.modelToDto(randomRestaurant);
 			}
 		}
