@@ -1,0 +1,39 @@
+<div class="sign-in-container">
+    <form id="loginForm" [formGroup]="signInForm" autocomplete="off" class="sign-in-form">
+        <div class="title">
+            <h3 class="login-title">Sign into location decision maker account</h3>
+        </div>
+        <div class="sign-in-form-content">
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" autocomplete="disabled" formControlName="userName" placeholder="Enter your user name"/>
+                </mat-form-field>
+                <div *ngIf="signInForm.get('userName')?.touched">
+                <span class="error" *ngIf="signInFormError('userName', 'required')">User Name is required</span>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" autocomplete="disabled" formControlName="password" placeholder="Enter your password"/>
+                </mat-form-field>
+                <div *ngIf="signInForm.get('password')?.touched">
+                    <span class="error" *ngIf="signInFormError('password', 'required')">Password is required</span>
+                </div>
+                <div class="errors">
+                    <ul *ngIf="signInErrors && signInErrors.length>0">
+                        <li class="error" *ngFor="let signInError of signInErrors;">
+                            {{signInError.message}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login-btn">
+                <button mat-raised-button color="primary" [disabled]="!this.signInForm.valid" (click)="signIn()">Sign In</button>
+            </div>
+            <div class="sign-up-link">
+                <span>Don’t have an account?</span>
+                <a routerLink="/sign-up">Sign Up</a>
+            </div>
+         </div>
+    </form>
+</div>

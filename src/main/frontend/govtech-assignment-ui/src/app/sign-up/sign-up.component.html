@@ -1,0 +1,63 @@
+<div class="sign-up-container">
+    <form id="signUpForm" [formGroup]="signUpForm" autocomplete="off" class="sign-up-form">
+        <div class="title">
+            <h3 class="sign-up-title">Sign up into location decision maker account</h3>
+        </div>
+        <div class="sign-up-form-content">
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" autocomplete="disabled" formControlName="firstName" placeholder="Enter your first name"/>
+                </mat-form-field>
+                <div *ngIf="signUpForm.get('firstName')?.touched">
+                <span class="error" *ngIf="signUpFormError('firstName', 'required')">First Name is required</span>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" autocomplete="disabled" formControlName="lastName" placeholder="Enter your last name"/>
+                </mat-form-field>
+                <div *ngIf="signUpForm.get('lastName')?.touched">
+                <span class="error" *ngIf="signUpFormError('lastName', 'required')">Last Name is required</span>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" autocomplete="disabled" formControlName="userName" placeholder="Enter your user name"/>
+                </mat-form-field>
+                <div *ngIf="signUpForm.get('userName')?.touched">
+                <span class="error" *ngIf="signUpFormError('userName', 'required')">User Name is required</span>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" autocomplete="disabled" formControlName="password" placeholder="Enter your password"/>
+                </mat-form-field>
+                <div *ngIf="signUpForm.get('password')?.touched">
+                    <span class="error" *ngIf="signUpFormError('password', 'required')">Password is required</span>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" autocomplete="disabled" formControlName="confirmPassword" placeholder="Re-type your password"/>
+                </mat-form-field>
+                <div *ngIf="signUpForm.get('confirmPassword')?.touched">
+                    <span class="error" *ngIf="signUpFormError('confirmPassword', 'required')">Confirm password is required</span>
+                </div>
+            </div>
+            <div class="errors">
+                <ul *ngIf="signUpErrors && signUpErrors.length>0">
+                    <li *ngFor="let signInError of signUpErrors;">
+                        {{signInError.message}}
+                    </li>
+                </ul>
+            </div>
+            <div class="sign-up-btn">
+                <button mat-raised-button [disabled]="!this.signUpForm.valid" color="primary" (click)="signUp()">Sign Up</button>
+            </div>
+            <div class="sign-in-link">
+                <span>Do you have an account already?</span>
+                <a routerLink="/sign-in">Sign In</a>
+            </div>
+         </div>
+    </form>
+</div>

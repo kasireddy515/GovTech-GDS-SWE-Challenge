@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+    <img
+      class="company-logo"
+      alt="GovTech Singapore"
+      src="../../assets/logo_govtech.gif"
+    />
+    <span class="app-title">Location Decision Maker</span>
+    <div class="spacer"></div>
+    <a class="nav-btn" routerLink="sign-in" *ngIf="!loggedInUserData">
+        <span>Sign In</span>
+    </a>
+    <a class="nav-btn" routerLink="sign-up" *ngIf="!loggedInUserData">
+        <span>Sign Up</span>
+    </a>
+    <a class="nav-btn" *ngIf="loggedInUserData">
+      <span>{{loggedInUserData.firstName}}&nbsp;{{loggedInUserData.lastName}}</span>
+    </a>
+    <a class="nav-btn" *ngIf="loggedInUserData" (click)="gotoLogOut()">
+      <span>Logout</span>
+    </a>
+  </div>
