@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:C:/Projects/GovTech/Assignment/govtech;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    username: govtech
+    password: govtech
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate.ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+ 
+springdoc:
+  packagesToScan: com.govtech.assignment.controller
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    path=documentation
+    disable-swagger-default-url=true
+    enabled=true
+    operationsSorter=method
+    tryItOutEnabled=true
+    filter=true
+    tagsSorter=alpha
+    
+govtech:
+  app:
+    jwtSecret: $2a$10$.MonoU9NIlaAWrSmd90OyOFQULEROulxAwFan4PWocQYW48LxsaBm
+    jwtExpirationMs: 86400000

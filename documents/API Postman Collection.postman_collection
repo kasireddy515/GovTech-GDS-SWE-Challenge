@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "97d3347a-60f7-4b95-b486-3722fa752d02",
+		"name": "Govt Tech Location Decision Maker Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"User\",\r\n    \"lastName\":\"Eighteen\",\r\n    \"userName\":\"usereighteen\",\r\n    \"password\":\"kasireddy515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/0/10/ALL/createdOn/ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"0",
+								"10",
+								"ALL",
+								"createdOn",
+								"ASC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User By User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/d6bd50ea-f8b3-4ec9-a706-77e072bccf38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"d6bd50ea-f8b3-4ec9-a706-77e072bccf38"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve User By Account ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user/account/23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"account",
+								"23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"userone\",\r\n    \"password\":\"kasireddy515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/account/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"userone\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/account/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"kasireddy515\",\r\n    \"oldPassword\":\"kasireddy515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/account/change-password/23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"change-password",
+								"23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"kasireddy515\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/account/reset-password/23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"reset-password",
+								"23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Account By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/account/23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"23cba7f2-c80e-4c94-8ec4-dd606e4cb6ca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Create Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Quarterly Lunch - 2010\",\r\n    \"description\":\"Lets Celebrate Quarterly Lunch - 2010. Please come and Join in deciding best restaurant location\",\r\n    \"userIds\":[\r\n        \"84a0a365-5e77-450d-9529-1b2419d7801d\",\r\n        \"80e2db46-2283-403d-96ad-bbba3dd8bec9\",\r\n        \"08656389-2462-4e82-a65e-23040035222f\",\r\n        \"0fb0d8fa-2a0a-4fb9-a54e-c9c8bc2e34ce\",\r\n        \"d6bd50ea-f8b3-4ec9-a706-77e072bccf38\",\r\n        \"ec388af9-6f6a-4fa7-99d8-9d5867a587fb\",\r\n        \"b3777645-55dd-42f2-98ab-625dd00a6e67\",\r\n        \"44a3dcad-9593-4862-8b08-7d6665ced13c\",\r\n        \"8f5d335f-90e4-4ace-8f38-5dcf1bb778b2\",\r\n        \"f4b65359-f204-40f8-b576-fdeb0d616d4f\",\r\n        \"071fef5f-7e34-4700-b0e0-90cb4b9f00c8\",\r\n        \"4746b0f1-e671-44ec-80c3-1f4bd204d29d\",\r\n        \"46bd5745-7fdc-4fd2-ba21-6ca5fbaca17b\",\r\n        \"a9bd5c42-a283-43cf-9894-8b0b65ebb697\",\r\n        \"3d871764-8c41-4873-b7a2-c6e1dc3db351\",\r\n        \"1f852018-d781-4b2d-8684-a7322964101e\",\r\n        \"75875760-2f58-4c08-b069-e9a847d9aed4\",\r\n        \"b8a6df87-c43a-44ee-8865-ea48720df955\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Session",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Quarterly Lunch - 2010\",\r\n    \"description\":\"Lets Celebrate Quarterly Lunch - 2010. Please come and Join in deciding best restaurant location\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/192cc311-23c9-4d5c-85fe-f2d32a9b168c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"192cc311-23c9-4d5c-85fe-f2d32a9b168c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Session",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/192cc311-23c9-4d5c-85fe-f2d32a9b168c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"192cc311-23c9-4d5c-85fe-f2d32a9b168c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invite Users To Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userIds\":[\r\n        \"84a0a365-5e77-450d-9529-1b2419d7801d\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/invite-users/192cc311-23c9-4d5c-85fe-f2d32a9b168c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"invite-users",
+								"192cc311-23c9-4d5c-85fe-f2d32a9b168c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Sessions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/0/10/ALL/createdOn/ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"0",
+								"10",
+								"ALL",
+								"createdOn",
+								"ASC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Session Invitees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/session/invite-users/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"session",
+								"invite-users",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Suggest a restaurant for a session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Quarterly Lunch - 2010\",\r\n    \"location\":\"Lets Celebrate Quarterly Lunch - 2010. Please come and Join in deciding best restaurant location\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/restaurant/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"restaurant",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve suggested restaurants of a session",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/restaurant/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"restaurant",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select a random restaurant from suggestions for a session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Quarterly Lunch - 2010\",\r\n    \"description\":\"Lets Celebrate Quarterly Lunch - 2010. Please come and Join in deciding best restaurant location\",\r\n    \"userIds\":[\r\n        \"84a0a365-5e77-450d-9529-1b2419d7801d\",\r\n        \"80e2db46-2283-403d-96ad-bbba3dd8bec9\",\r\n        \"08656389-2462-4e82-a65e-23040035222f\",\r\n        \"0fb0d8fa-2a0a-4fb9-a54e-c9c8bc2e34ce\",\r\n        \"d6bd50ea-f8b3-4ec9-a706-77e072bccf38\",\r\n        \"ec388af9-6f6a-4fa7-99d8-9d5867a587fb\",\r\n        \"b3777645-55dd-42f2-98ab-625dd00a6e67\",\r\n        \"44a3dcad-9593-4862-8b08-7d6665ced13c\",\r\n        \"8f5d335f-90e4-4ace-8f38-5dcf1bb778b2\",\r\n        \"f4b65359-f204-40f8-b576-fdeb0d616d4f\",\r\n        \"071fef5f-7e34-4700-b0e0-90cb4b9f00c8\",\r\n        \"4746b0f1-e671-44ec-80c3-1f4bd204d29d\",\r\n        \"46bd5745-7fdc-4fd2-ba21-6ca5fbaca17b\",\r\n        \"a9bd5c42-a283-43cf-9894-8b0b65ebb697\",\r\n        \"3d871764-8c41-4873-b7a2-c6e1dc3db351\",\r\n        \"1f852018-d781-4b2d-8684-a7322964101e\",\r\n        \"75875760-2f58-4c08-b069-e9a847d9aed4\",\r\n        \"b8a6df87-c43a-44ee-8865-ea48720df955\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/restaurant/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"restaurant",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
