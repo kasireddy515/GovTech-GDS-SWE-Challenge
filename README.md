@@ -43,7 +43,9 @@
           <li>
           h2 console : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/h2-console.png" target="_blank">here</a>
           <br/>
-          Local host URL : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
+           Local host URL : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
+           <br/>
+           H2 DB Backup : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/govtech.mv.db" target="_blank">here</a>
         </li>
       </ul>
   <br/>
@@ -141,7 +143,8 @@
           APIs can be tested using postman with the API Postman Collection : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/API%20Postman%20Collection.postman_collection" target="_blank">here</a>
         </li>
           <li>
-          Database can be accessed : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
+           Database can be accessed : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
+           Credentials: User name: govtech, password: govtech   
         </li>
       </ul>
   <br/>
