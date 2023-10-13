@@ -74,7 +74,7 @@
            </li>
            <br/>
             <li>
-               90% code coverage
+               90% code coverage with 50+ Junit test cases
            </li>
            <br/>
            <li>
