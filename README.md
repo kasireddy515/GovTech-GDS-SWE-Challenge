@@ -34,6 +34,12 @@
          <li>
           API Postman Collection : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/API%20Postman%20Collection.postman_collection" target="_blank">here</a>
         </li>
+          <li>
+          h2 console : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/h2-console.png" target="_blank">here</a>
+          <br/>
+          Local host URL : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
+        </li>
+         <br/>
       </ul>
   <br/>
    <h2>Key Features</h2>
