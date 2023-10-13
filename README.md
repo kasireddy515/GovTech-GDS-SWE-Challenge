@@ -15,7 +15,7 @@
           No of APIs : 19 
       </li>
     </ul>
-  <h2>Quick Links</h2>
+  <h2>Documentation Quick Links</h2>
       <ul>
          <li>
           UI/UX screens Document : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/UI-UX-Screens.pptx" target="_blank">here</a>
