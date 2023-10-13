@@ -61,6 +61,7 @@ public class RestaurantServiceImplTest {
 		when(sessionService.findById(any())).thenReturn(session);
 
 		when(validator.validateInvalidSessionId(any())).thenReturn(session);
+		when(validator.validateInvalidInviteeSessionId(any(),any())).thenReturn(session);
 		when(userService.findById(any())).thenReturn(user);
 		when(userValidator.validateInvalidUserId(any())).thenReturn(user);
 

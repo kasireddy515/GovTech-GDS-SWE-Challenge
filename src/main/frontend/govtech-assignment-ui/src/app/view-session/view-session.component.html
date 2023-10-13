@@ -8,7 +8,7 @@
                 <button class="view-btn" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm()">End Session</button>
                 <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Edit Session</button>
                 <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="deleteSessionConfirm()" >Delete Session</button>
-                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" (click)="suggestRestaurant()" >Suggest a restaurant for this Session</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.active" (click)="suggestRestaurant()" >Suggest a restaurant for this Session</button>
                 
                 <button class="view-btn" mat-raised-button color="primary" (click)="goToSessions()" >View all sessions</button>
                 
@@ -81,6 +81,20 @@
             <span>
                Users responses ({{sessionData.submittedRestaurants.length}})
             </span>
+        </div>
+        <div class="data-content-container">
+            <div class="invited-user-response-container" *ngFor="let submittedRestaurant of sessionData.submittedRestaurants;">
+                <div class="invited-user-response" [ngClass]="userDetails.id==submittedRestaurant.suggestedUser.id ? 'invited-user-response owner-response' : 'invited-user-response'">
+                    <div class="invited-user-name" *ngIf="userDetails.id!=submittedRestaurant.suggestedUser.id">
+                        {{submittedRestaurant.suggestedUser.firstName}}&nbsp;{{submittedRestaurant.suggestedUser.lastName}}
+                    </div>
+                    <div class="invited-user-restaurant-details">
+                        <span class="invited-user-restaurant-name">{{submittedRestaurant.title}}</span>
+                        &nbsp;at&nbsp;
+                        <span class="invited-user-restaurant-location">{{submittedRestaurant.location}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="users-container">

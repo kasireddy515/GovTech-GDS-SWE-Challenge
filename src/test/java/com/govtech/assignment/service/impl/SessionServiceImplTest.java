@@ -241,6 +241,7 @@ public class SessionServiceImplTest {
 		createSessionInvitesResponse.setSessionUserInviteIds(sessionUserInviteIds);
 		Session session = new Session();
 		when(validator.validateInvalidSessionId(any())).thenReturn(session);
+		when(validator.validateInvalidOwnerSessionId(any(),any())).thenReturn(session);
 		Set<User> users = new HashSet<>();
 		User user = new User();
 		users.add(user);
@@ -259,6 +260,7 @@ public class SessionServiceImplTest {
 		updateSessionResponse.setId("12345");
 		Session session = new Session();
 		when(validator.validateInvalidSessionId(any())).thenReturn(session);
+		when(validator.validateInvalidOwnerSessionId(any(),any())).thenReturn(session);
 		when(repository.save(any())).thenReturn(session);
 		when(mapper.mapEntityToUpdateSessionResponse(any())).thenReturn(updateSessionResponse);
 		UpdateSessionRequest updateSessionRequest = new UpdateSessionRequest();
