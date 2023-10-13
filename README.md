@@ -16,6 +16,7 @@
       </li>
     </ul>
   <h2>Documentation Quick Links</h2>
+      <h5>Documentation : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/tree/main/documents" target="_blank">here</a> </h5>
       <ul>
          <li>
           UI/UX screens Document : <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/documents/UI-UX-Screens.pptx" target="_blank">here</a>
