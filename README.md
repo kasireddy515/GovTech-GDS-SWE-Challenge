@@ -15,8 +15,6 @@
           No of APIs : 19 
       </li>
     </ul>
-
-  <br/>
   <h2>Quick Links</h2>
       <ul>
          <li>
@@ -47,7 +45,6 @@
           <br/>
           Local host URL : <a href="http://localhost:8080/h2-console" target="_blank">here</a>
         </li>
-         <br/>
       </ul>
   <br/>
    <h2>Key Features</h2>
@@ -118,8 +115,24 @@
            </li>
        </ul>
    <h2>Test</h2>
-   <br/>
-       <h2>Backend</h2>
+       <h4>
+           Front end
+       </h4>
+       <ul>
+           <li>
+               Access applciation in local <a href="http://localhost:4200/" target="_blank">here</a>
+           </li>
+           <li>
+               Sign up in the application <a href="http://localhost:4200/sign-up" target="_blank">here</a>
+           </li>
+           <li>
+               Sign in in the application <a href="http://localhost:4200/sign-in" target="_blank">here</a>
+           </li>
+            <li>
+               Test the application by creating and inviting users into the sessions
+           </li>
+       </ul>
+       <h4>Backend</h4>
       <ul>
          <li>
            APIs can be tested using swagger URL : <a href="http://localhost:8080/swagger-ui/index.html#/" target="_blank">here</a>
