@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
     if (this.loggedInUserData) {
       this.loggedInUserData = JSON.parse(this.loggedInUserData);
     }else{
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['/']);
     }
   }
 
@@ -33,6 +33,6 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('loggedInUserData');
     this.authenticationService.storeLoggedInUserData(null);
     this.authenticationService.storeLoggedInUserAccountData(null);
-    this.router.navigate(['sign-in']);
+    this.router.navigate(['/']);
   }
 }

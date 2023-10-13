@@ -28,7 +28,7 @@ export class AppComponent {
     if (this.loggedInUserAccountData) {
       this.loggedInUserAccountData = JSON.parse(this.loggedInUserAccountData);
     }else{
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['/']);
     }
   }
 

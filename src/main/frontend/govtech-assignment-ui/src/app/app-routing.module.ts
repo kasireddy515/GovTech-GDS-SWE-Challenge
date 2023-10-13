@@ -6,8 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { EditSessionComponent } from './edit-session/edit-session.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
+  { path: '', component: WelcomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'create-session', component: CreateSessionComponent },
   { path: 'view-session/:id', component: ViewSessionComponent },

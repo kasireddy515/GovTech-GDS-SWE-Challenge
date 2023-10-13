@@ -30,6 +30,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { AUTH_INTERCEPTOR_PROVIDERS } from './providers/auth-interceptor/auth-interceptor.service';
 import { ViewSessionComponent } from './view-session/view-session.component';
 import { EditSessionComponent } from './edit-session/edit-session.component';
+import { SuggestSessionRestaurantComponent } from './suggest-session-restaurant/suggest-session-restaurant.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,12 @@ import { EditSessionComponent } from './edit-session/edit-session.component';
     HomeComponent,
     CreateSessionComponent,
     ViewSessionComponent,
-    EditSessionComponent
+    EditSessionComponent,
+    SuggestSessionRestaurantComponent,
+    WelcomeComponent
+  ],
+  entryComponents:[
+    SuggestSessionRestaurantComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

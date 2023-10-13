@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Suggest a restaurant to the session</h2>
+<mat-dialog-content [formGroup]="submitRestaurantSessionForm">
+    <mat-form-field>
+
+        <mat-label>Restaurant Name</mat-label>
+        <input matInput formControlName="title" autocomplete="off">
+        <mat-error *ngIf="submitRestaurantSessionFormError('title', 'required')">Restaurant Name is required</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+        <mat-label>Restaurant Location</mat-label>
+        <input matInput formControlName="location" autocomplete="off">
+        <mat-error *ngIf="submitRestaurantSessionFormError('location', 'required')">Restaurant Location is required</mat-error>
+     </mat-form-field>
+
+    <br/>
+
+    <div class="errors" *ngIf="errors && errors.length>0">
+        <ul>
+            <li *ngFor="let error of errors;">
+                {{error.message}}
+            </li>
+        </ul>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" [disabled]="!submitRestaurantSessionForm.valid" (click)="submitSessionRestaurant()">Suggest Restaurant</button>
+</mat-dialog-actions>

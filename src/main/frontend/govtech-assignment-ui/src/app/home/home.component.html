@@ -78,8 +78,8 @@
                 <td mat-cell *matCellDef="let element">
                     <button class="view-btn" mat-raised-button color="primary" *ngIf="element.createdByUser.id==userDetails.id" (click)="viewSession(element)" >View</button>
                     <button class="view-btn" mat-raised-button color="primary" *ngIf="element.active && element.createdByUser.id!=userDetails.id" (click)="joinSession(element)" >Join</button>
-                    <button class="view-btn" *ngIf="element.createdByUser.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm(element)">End</button>
-                    <button class="view-btn" mat-raised-button color="primary" *ngIf="element.createdByUser.id==userDetails.id" (click)="editSession(element)" >Edit</button>
+                    <button class="view-btn" *ngIf="element.active && element.createdByUser.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm(element)">End</button>
+                    <button class="view-btn" mat-raised-button color="primary" *ngIf="element.active && element.createdByUser.id==userDetails.id" (click)="editSession(element)" >Edit</button>
                     <button class="view-btn" mat-raised-button color="primary" *ngIf="element.createdByUser.id==userDetails.id" (click)="deleteSessionConfirm(element)" >Delete</button>
                     
                 </td>

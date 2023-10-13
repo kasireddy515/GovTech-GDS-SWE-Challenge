@@ -5,9 +5,11 @@
                 {{sessionData.title}}
             </span>
             <span class="go-to-sessions-btn">
-                <button class="view-btn" *ngIf="sessionData.createdBy.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm()">End Session</button>
-                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Edit Session</button>
+                <button class="view-btn" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" mat-raised-button color="primary" (click)="endSessionConfirm()">End Session</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Edit Session</button>
                 <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="deleteSessionConfirm()" >Delete Session</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.active&&sessionData.createdBy.id==userDetails.id" (click)="suggestRestaurant()" >Suggest a restaurant for this Session</button>
+                
                 <button class="view-btn" mat-raised-button color="primary" (click)="goToSessions()" >View all sessions</button>
                 
             </span>
@@ -69,7 +71,7 @@
             </div>
             <div class="session-data">
                 <div>
-                    <span>Selected restaurant</span> : {{sessionData.selectedRestaurant?sessionData.selectedRestaurant.title:""}},{{sessionData.selectedRestaurant?sessionData.selectedRestaurant.location:""}}
+                    <span class="selected-restaurant">Selected restaurant</span> : {{sessionData.selectedRestaurant?sessionData.selectedRestaurant.title:""}},{{sessionData.selectedRestaurant?sessionData.selectedRestaurant.location:""}}
                 </div>
             </div>
         </div>
@@ -88,7 +90,7 @@
             </span>
             &nbsp;&nbsp;
             <span>
-                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Invite another user</button>
+                <button class="view-btn" mat-raised-button color="primary" *ngIf="sessionData.createdBy.id==userDetails.id" (click)="editSession()" >Invite user(s)</button>
             </span>
         </div>
         <div class="data-content-container">
