@@ -101,7 +101,7 @@ public class SessionServiceImpl implements SessionService {
 			total = repository.countByUserId(userId);
 
 		} else {
-			total = repository.countByTitleAndUserId(searchText,userId);
+			total = repository.countByTitleAndUserId(searchText, userId);
 		}
 
 		if (total == 0) {
@@ -112,7 +112,7 @@ public class SessionServiceImpl implements SessionService {
 		if (searchText == null || searchText.isBlank() || searchText.equalsIgnoreCase(AppConstants.ALL)) {
 			pageSessinons = repository.findByUserId(paging, userId);
 		} else {
-			pageSessinons = repository.findByTitleAndUserId(searchText,userId, paging);
+			pageSessinons = repository.findByTitleAndUserId(searchText, userId, paging);
 		}
 
 		List<Session> sessions = pageSessinons != null && pageSessinons.hasContent() ? pageSessinons.getContent()
@@ -134,7 +134,11 @@ public class SessionServiceImpl implements SessionService {
 
 	@Override
 	public CreateSessionInvitesResponse invite(String sessionId, CreateSessionInviteRequest request) {
+		
 		Session session = validator.validateInvalidSessionId(findById(sessionId));
+		String userId = AccountUtil.getLoggedInUserAccountInfo().getUserId();
+		session = validator.validateInvalidOwnerSessionId(session, userId);
+		
 		session = inviteUsers(session, request.getUserIds());
 		session = repository.save(session);
 		CreateSessionInvitesResponse createSessionInvitesResponse = new CreateSessionInvitesResponse();
@@ -156,6 +160,8 @@ public class SessionServiceImpl implements SessionService {
 	public UpdateSessionResponse update(String sessionId, UpdateSessionRequest request) {
 
 		Session session = validator.validateInvalidSessionId(findById(sessionId));
+		String userId = AccountUtil.getLoggedInUserAccountInfo().getUserId();
+		session = validator.validateInvalidOwnerSessionId(session, userId);
 
 		session.setTitle(request.getTitle() != null ? request.getTitle() : session.getTitle());
 		session.setDescription(request.getDescription() != null ? request.getDescription() : session.getDescription());
@@ -170,7 +176,11 @@ public class SessionServiceImpl implements SessionService {
 
 	@Override
 	public Boolean delete(String sessionId) {
+
 		Session session = validator.validateInvalidSessionId(findById(sessionId));
+		String userId = AccountUtil.getLoggedInUserAccountInfo().getUserId();
+		session = validator.validateInvalidOwnerSessionId(session, userId);
+
 		repository.delete(session);
 		return Boolean.TRUE;
 	}

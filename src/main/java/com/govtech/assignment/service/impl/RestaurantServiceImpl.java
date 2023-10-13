@@ -45,7 +45,12 @@ public class RestaurantServiceImpl implements RestaurantService {
 			AddRestaurantToSessionRequest request) {
 
 		Session session = validator.validateInvalidSessionId(sessionService.findById(sessionId));
-		User user = userService.findById(AccountUtil.getLoggedInUserAccountInfo().getUserId());
+
+		String userId = AccountUtil.getLoggedInUserAccountInfo().getUserId();
+
+		session = validator.validateInvalidInviteeSessionId(session,userId);
+		
+		User user = userService.findById(userId);
 		user = userValidator.validateInvalidUserId(user);
 
 		Restaurant restaurant = mapper.mapRequestToEntiity(request, user);

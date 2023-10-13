@@ -45,6 +45,14 @@ public class ExceptionTranslator extends ResponseEntityExceptionHandler {
 		errorResponse.add(response);
 		return new ResponseEntity<>(errorResponse, HttpStatus.CONFLICT);
 	}
+	
+	@ExceptionHandler(UnAuthorizedException.class)
+	public ResponseEntity<Object> handleUnAuthorizedExceptions(UnAuthorizedException exception, WebRequest webRequest) {
+		ExceptionResponse response = prepareErrorResponse(exception.getMessage());
+		List<ExceptionResponse> errorResponse = new ArrayList<>();
+		errorResponse.add(response);
+		return new ResponseEntity<>(errorResponse, HttpStatus.UNAUTHORIZED);
+	}
 
 	@ExceptionHandler(DataNotFoundException.class)
 	public ResponseEntity<Object> handleDataNotFoundExceptions(DataNotFoundException exception, WebRequest webRequest) {
