@@ -55,6 +55,7 @@
             <li>
                User notifications using server sent events (SSE)
            </li>
+             <br/>
            <li>
                Centralized logging management using <b>Spring AOP</b> <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/src/main/java/com/govtech/assignment/config/LoggingAspect.java" target="_blank">here</a>
            </li>
