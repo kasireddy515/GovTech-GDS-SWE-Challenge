@@ -53,7 +53,7 @@
    <h2>Key Features</h2>
        <ul>
             <li>
-               User notifications using server sent events (SSE)
+               User notifications using server sent events <b>(SSE)</b>
            </li>
              <br/>
            <li>
