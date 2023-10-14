@@ -12,7 +12,7 @@
       <li>
           Backend APIs built using Spring boot, JPA, H2 in-memory database and maven as build tool
           <br/>
-          No of APIs : 19 
+          No of APIs : 23
       </li>
     </ul>
   <h2>Documentation Quick Links</h2>
@@ -52,6 +52,9 @@
   <br/>
    <h2>Key Features</h2>
        <ul>
+            <li>
+               User notifications using server sent events (SSE)
+           </li>
            <li>
                Centralized logging management using <b>Spring AOP</b> <a href="https://github.com/kasireddy515/GovTech-GDS-SWE-Challenge/blob/main/src/main/java/com/govtech/assignment/config/LoggingAspect.java" target="_blank">here</a>
            </li>
