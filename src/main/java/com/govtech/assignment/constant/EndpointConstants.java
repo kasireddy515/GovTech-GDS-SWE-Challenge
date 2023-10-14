@@ -6,6 +6,7 @@ public class EndpointConstants {
 	}
 
 	public static final String USER_API_PATH = "/api/v1/user";
+	public static final String USER_NOTIFICATION_API_PATH = "/api/v1/user-notification";
 	public static final String ACCOUNT_API_PATH = "/api/v1/account";
 	public static final String RESTAURANT_API_PATH = "/api/v1/restaurant";
 	public static final String SESSION_API_PATH = "/api/v1/session";
@@ -28,4 +29,5 @@ public class EndpointConstants {
 	public static final String DETAILS_BY_SESSION_ID_API_PATH = "/{sessionId}";
 	public static final String RESTAURANT_SESSION_ID_PATH_VARIABLE = "sessionId";
 	public static final String SELECT_DETAILS_BY_SESSION_ID_API_PATH = "/select/{sessionId}";
+	public static final String SUBSCRIBE_API_PATH = "/subscribe";
 }

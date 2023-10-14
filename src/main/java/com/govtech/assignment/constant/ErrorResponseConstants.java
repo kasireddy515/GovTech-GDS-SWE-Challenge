@@ -17,5 +17,5 @@ public class ErrorResponseConstants {
 	public static final String USER_NOT_FOUND_ACCOUNT_ID = "User does not exists with the provided account id";
 	public static final String SESSION_NOT_FOUND_ID = "Session does not exists with the provided id";
 	public static final String SESSION_NOT_OWNER_ID = "You are not authroized to do this transaction as this session does not created by you";
-	
+	public static final String USER_NOTIFICATION_NOT_FOUND_ID = "User notification does not exists with the provided id";
 }

@@ -441,7 +441,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3MDc5MDkzLCJleHAiOjE2OTcxNjU0OTN9.RB70XduaPoPRDkF5HacJQyVr9GOFJZHMPM3gNJEWOY9nxMyNbie8iJ0N3ZCiN6Rnu-Wl-RsfyYgVh7xc3v_LXA",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3Mjg0OTczLCJleHAiOjE2OTczNzEzNzN9.ncYmOLW7wfs4XMm8wIuRNf4MUdC1obGD_W5P0xuGxdf-n254U5eKHtfO5yfBDIumB3tfwFap_hciCZqgnhUifw",
 								"type": "default"
 							}
 						],
@@ -513,7 +513,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Quarterly Lunch - 2010\",\r\n    \"location\":\"Lets Celebrate Quarterly Lunch - 2010. Please come and Join in deciding best restaurant location\"\r\n}",
+							"raw": "{\r\n    \"title\":\"Komala Vilas\",\r\n    \"location\":\"Little India\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -567,8 +567,11 @@
 				},
 				{
 					"name": "Select a random restaurant from suggestions for a session",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
@@ -597,6 +600,124 @@
 								"v1",
 								"restaurant",
 								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Notifications",
+			"item": [
+				{
+					"name": "Send Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3Mjg0OTczLCJleHAiOjE2OTczNzEzNzN9.ncYmOLW7wfs4XMm8wIuRNf4MUdC1obGD_W5P0xuGxdf-n254U5eKHtfO5yfBDIumB3tfwFap_hciCZqgnhUifw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\":\"Session invite\",\r\n    \"userIds\":[\r\n        \"8f5d335f-90e4-4ace-8f38-5dcf1bb778b2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user-notification/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user-notification",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Notification Read",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3Mjg0OTczLCJleHAiOjE2OTczNzEzNzN9.ncYmOLW7wfs4XMm8wIuRNf4MUdC1obGD_W5P0xuGxdf-n254U5eKHtfO5yfBDIumB3tfwFap_hciCZqgnhUifw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"read\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user-notification/1ec355e4-8c7e-49f3-8de8-967771f63db2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user-notification",
+								"1ec355e4-8c7e-49f3-8de8-967771f63db2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Notifications",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2Vyb25lIiwiaWF0IjoxNjk3Mjg0OTczLCJleHAiOjE2OTczNzEzNzN9.ncYmOLW7wfs4XMm8wIuRNf4MUdC1obGD_W5P0xuGxdf-n254U5eKHtfO5yfBDIumB3tfwFap_hciCZqgnhUifw",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\":\"Session invite\",\r\n    \"userIds\":[\r\n        \"8f5d335f-90e4-4ace-8f38-5dcf1bb778b2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user-notification",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user-notification"
 							]
 						}
 					},

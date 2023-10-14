@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from '../providers/user/user.service';
 import { Router } from '@angular/router';
 import { SessionService } from '../providers/session/session.service';
+import { UsernotificationService } from '../providers/usernotification/usernotification.service';
 
 @Component({
   selector: 'app-create-session',
@@ -31,7 +32,7 @@ export class CreateSessionComponent implements OnInit {
   selectedUsers:any[]=[];
   createdSessionId:any;
 
-  constructor(private sessionService:SessionService,private router: Router,private fb: FormBuilder,private userService:UserService) {
+  constructor(private userNotificationService:UsernotificationService,private sessionService:SessionService,private router: Router,private fb: FormBuilder,private userService:UserService) {
     this.getUsers();
    }
 
@@ -128,6 +129,25 @@ export class CreateSessionComponent implements OnInit {
             e.selected=false;
           });
         }
+        if(request.userIds && request.userIds.length>0){
+          this.sendNotificationToSessionInvitees(request);
+        }
+      },
+      (error) => {
+        this.isDataLoading = false;
+        this.createSessionErrors = error.error;
+      },
+      () => { }
+    );
+  }
+  sendNotificationToSessionInvitees(request: any) {
+    let userNotificationRequest = {
+      userIds:request.userIds,
+      message:"Session Invite"
+    };
+    this.userNotificationService.create(this.createdSessionId,userNotificationRequest).subscribe(
+      (data) => {
+        this.isDataLoading = false;
       },
       (error) => {
         this.isDataLoading = false;

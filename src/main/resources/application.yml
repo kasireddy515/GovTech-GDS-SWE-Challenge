@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:govtech;MODE=MYSQL;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:file:C:/Projects/GovTech/Assignment/govtech;MODE=MYSQL;DB_CLOSE_DELAY=-1
     username: govtech
     password: govtech
     driverClassName: org.h2.Driver
